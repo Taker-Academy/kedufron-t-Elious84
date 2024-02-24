@@ -1,0 +1,29 @@
+.item-container {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+#item1 {
+    background-color: #f9f9f9;
+}
+
+#item2 {
+    background-color: #e9e9e9;
+}
+
+#item3 {
+    background-color: #d9d9d9;
+}
+
+.item-img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 4px;
+}
+
+.item-description, .item-price {
+    color: #666;
+}
