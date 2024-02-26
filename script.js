@@ -26,7 +26,6 @@ function fetchAndDisplayItem(itemId, containerId) {
       document.getElementById(`itemImg${itemId}`).src = imageUrl;
     })
     .catch(error => {
-      console.error(`Error fetching item ${itemId}:`, error);
       const container = document.getElementById(containerId);
       container.innerHTML = `<p>Erreur lors du chargement de l'item ${itemId}</p>`;
     });
