@@ -36,4 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
   fetchAndDisplayItem(1, 'item1');
   fetchAndDisplayItem(2, 'item2');
   fetchAndDisplayItem(3, 'item3');
+  fetchAndDisplayItem(4, 'item4');
+  fetchAndDisplayItem(5, 'item5');
+  fetchAndDisplayItem(6, 'item6');
 });
