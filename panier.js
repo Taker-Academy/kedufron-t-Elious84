@@ -4,8 +4,11 @@ function fetchAndDisplayCartItems() {
     const productDetails = document.getElementById('productDetails');
     productDetails.innerHTML = '';
     const quantities = JSON.parse(localStorage.getItem('itemQuantities')) || {};
+    let hasItems = false;
+
     Object.keys(quantities).forEach(itemId => {
         if (quantities[itemId] > 0) {
+            hasItems = true;
             fetch(`https://api.kedufront.juniortaker.com/item/${itemId}`)
                 .then(response => response.json())
                 .then(data => {
@@ -28,8 +31,29 @@ function fetchAndDisplayCartItems() {
                 });
         }
     });
+
     cleanUpQuantities();
+
+    const tabItem2 = document.querySelector('.tab_item2');
+    if (hasItems) {
+        let checkoutButton = document.getElementById('checkoutButton');
+        if (!checkoutButton) {
+            checkoutButton = document.createElement('button');
+            checkoutButton.id = 'checkoutButton';
+            checkoutButton.textContent = 'Valider ma commande';
+            checkoutButton.onclick = function() {
+                alert('Commande validée!');
+            };
+        }
+        tabItem2.appendChild(checkoutButton);
+    } else {
+        const checkoutButton = document.getElementById('checkoutButton');
+        if (checkoutButton) {
+            checkoutButton.remove();
+        }
+    }
 }
+
 
 function adjustQuantity(itemId, change) {
     let quantities = JSON.parse(localStorage.getItem('itemQuantities')) || {};

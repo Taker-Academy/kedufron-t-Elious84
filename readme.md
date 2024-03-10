@@ -46,7 +46,7 @@ Stéphane, le dev backend, vous explique avec ses mots les différentes pages de
 - Modification de la quantité d'un produit dans le panier o
 - Envoi des informations du formulaire au serveur
 - Affichage d'un pop-up de confirmation de commande o
-- Affichage de la page de confirmation de commande o
+- Affichage de la page de confirmation de commande
 
 ## Les contraintes techniques 🛠️
 
