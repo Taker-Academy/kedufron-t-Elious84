@@ -34,26 +34,12 @@ function fetchAndDisplayCartItems() {
 
     cleanUpQuantities();
 
-    const tabItem2 = document.querySelector('.tab_item2');
     if (hasItems) {
-        let checkoutButton = document.getElementById('checkoutButton');
-        if (!checkoutButton) {
-            checkoutButton = document.createElement('button');
-            checkoutButton.id = 'checkoutButton';
-            checkoutButton.textContent = 'Valider ma commande';
-            checkoutButton.onclick = function() {
-                alert('Commande validée!');
-            };
-        }
-        tabItem2.appendChild(checkoutButton);
+        appendCheckoutButton();
     } else {
-        const checkoutButton = document.getElementById('checkoutButton');
-        if (checkoutButton) {
-            checkoutButton.remove();
-        }
+        removeCheckoutButton();
     }
 }
-
 
 function adjustQuantity(itemId, change) {
     let quantities = JSON.parse(localStorage.getItem('itemQuantities')) || {};
@@ -65,7 +51,6 @@ function adjustQuantity(itemId, change) {
         delete quantities[itemId];
     }
     localStorage.setItem('itemQuantities', JSON.stringify(quantities));
-
     fetchAndDisplayCartItems();
 }
 
@@ -77,4 +62,25 @@ function cleanUpQuantities() {
         }
     });
     localStorage.setItem('itemQuantities', JSON.stringify(quantities));
+}
+
+function appendCheckoutButton() {
+    let checkoutButton = document.getElementById('checkoutButton');
+    if (!checkoutButton) {
+        const tabItem2 = document.querySelector('.tab_item2');
+        checkoutButton = document.createElement('button');
+        checkoutButton.id = 'checkoutButton';
+        checkoutButton.textContent = 'Valider ma commande';
+        checkoutButton.addEventListener('click', function() {
+            window.location.href = 'commande.html';
+        });
+        tabItem2.appendChild(checkoutButton);
+    }
+}
+
+function removeCheckoutButton() {
+    const checkoutButton = document.getElementById('checkoutButton');
+    if (checkoutButton) {
+        checkoutButton.remove();
+    }
 }
