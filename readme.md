@@ -39,13 +39,13 @@ Stéphane, le dev backend, vous explique avec ses mots les différentes pages de
 
 ## Les fonctionnalités 🧰
 
-- Affichage de la liste des produits o
-- Affichage d'un produit o
+- Affichage de la liste des produits
+- Affichage d'un produit
 - Ajout d'un produit au panier
-- Suppression d'un produit du panier o
-- Modification de la quantité d'un produit dans le panier o
+- Suppression d'un produit du panier
+- Modification de la quantité d'un produit dans le panier
 - Envoi des informations du formulaire au serveur
-- Affichage d'un pop-up de confirmation de commande o
+- Affichage d'un pop-up de confirmation de commande
 - Affichage de la page de confirmation de commande
 
 ## Les contraintes techniques 🛠️
